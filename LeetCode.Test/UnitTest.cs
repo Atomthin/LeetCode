@@ -27,5 +27,13 @@ namespace LeetCode.Test
             Assert.True(al.IsToeplitzMatrix(new int[,] { { 1, 2, 3, 4 }, { 5, 1, 2, 3 }, { 9, 5, 1, 2 } }));
             Assert.False(al.IsToeplitzMatrix(new int[,] { { 1, 2 }, { 2, 2 } }));
         }
+
+        [Fact]
+        public void CountPrimeSetBits()
+        {
+            Assert.Equal(4, al.CountPrimeSetBits(6, 10));
+            Assert.Equal(23, al.CountPrimeSetBits(842,888));
+            Assert.Equal(21, al.CountPrimeSetBits(567, 607));
+        }
     }
 }
