@@ -1,3 +1,4 @@
+using LeetCode.Core.Common;
 using LeetCode.Core.Problems;
 using Xunit;
 
@@ -32,8 +33,22 @@ namespace LeetCode.Test
         public void CountPrimeSetBits()
         {
             Assert.Equal(4, al.CountPrimeSetBits(6, 10));
-            Assert.Equal(23, al.CountPrimeSetBits(842,888));
+            Assert.Equal(23, al.CountPrimeSetBits(842, 888));
             Assert.Equal(21, al.CountPrimeSetBits(567, 607));
+        }
+
+        [Fact]
+        public void MaxDepth()
+        {
+
+            var treeNode = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+            };
+            treeNode.right.left = new TreeNode(7);
+            treeNode.right.right = new TreeNode(15);
+            Assert.Equal(3, al.MaxDepth(treeNode));
         }
     }
 }
