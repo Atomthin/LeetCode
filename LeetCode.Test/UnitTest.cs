@@ -50,5 +50,26 @@ namespace LeetCode.Test
             treeNode.right.right = new TreeNode(15);
             Assert.Equal(3, al.MaxDepth(treeNode));
         }
+
+        #region CommonAlgorithms
+        [Fact]
+        public void BinarySearch()
+        {
+            Assert.Equal(5, al.BinarySearch(new int[] { 1, 2, 3, 4, 9, 10, 65, 89, 100, 105, 200 }, 10));
+            Assert.Equal(5, al.BinarySearchRecursion(new int[] { 1, 2, 3, 4, 9, 10, 65, 89, 100, 105, 200 }, 10, 0, 10));
+        }
+
+        [Fact]
+        public void BubbleSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.BubbleSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
+        public void QuickSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.QuickSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }, 0, 8));
+        }
+        #endregion
     }
 }
