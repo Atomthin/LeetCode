@@ -60,6 +60,18 @@ namespace LeetCode.Test
         }
 
         [Fact]
+        public void StraightInsertionSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.StraightInsertionSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
+        public void ShellSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.StraightInsertionSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
         public void BubbleSort()
         {
             Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.BubbleSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
@@ -69,6 +81,24 @@ namespace LeetCode.Test
         public void QuickSort()
         {
             Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.QuickSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }, 0, 8));
+        }
+
+        [Fact]
+        public void StraightSelectSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.StraightSelectSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
+        public void HeapSort()
+        {
+            Assert.Equal(new int[] { 2000, 1000, 500, 200, 100, 30, 10, 3, 1 }, al.HeapSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
+        public void MergeSort()
+        {
+            Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.MergeSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
         }
         #endregion
     }
