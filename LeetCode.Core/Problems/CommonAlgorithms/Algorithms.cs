@@ -1,4 +1,7 @@
-﻿namespace LeetCode.Core.Problems
+﻿using LeetCode.Core.Common;
+using System.Collections.Generic;
+
+namespace LeetCode.Core.Problems
 {
     public partial class Algorithms
     {
@@ -322,6 +325,104 @@
             }
         }
 
+        #endregion
+
+        #region 二叉树遍历
+
+        /// <summary>
+        /// 先序遍历
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public List<int> DLR(TreeNode node)
+        {
+            if (node == null)
+                return null;
+            var list = new List<int>();
+            list.Add(node.value);
+            if (node.left != null)
+            {
+                list.AddRange(DLR(node.left));
+            }
+            if (node.right != null)
+            {
+                list.AddRange(DLR(node.right));
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 中序遍历
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public List<int> LDR(TreeNode node)
+        {
+            if (node == null)
+                return null;
+            var list = new List<int>();
+            if (node.left != null)
+            {
+                list.AddRange(LDR(node.left));
+            }
+            list.Add(node.value);
+            if (node.right != null)
+            {
+                list.AddRange(LDR(node.right));
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 后序遍历
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public List<int> LRD(TreeNode node)
+        {
+            if (node == null)
+                return null;
+            var list = new List<int>();
+            if (node.left != null)
+            {
+                list.AddRange(LRD(node.left));
+            }
+            if (node.right != null)
+            {
+                list.AddRange(LRD(node.right));
+            }
+            list.Add(node.value);
+            return list;
+        }
+
+        /// <summary>
+        /// 层序遍历
+        /// 借助队列进行
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public List<int> LevelOrder(TreeNode node)
+        {
+            if (node == null)
+                return null;
+            var list = new List<int>();
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(node);
+            while (queue.Count > 0)
+            {
+                var temp = queue.Dequeue();
+                list.Add(temp.value);
+                if (temp.left != null)
+                {
+                    queue.Enqueue(temp.left);
+                }
+                if (temp.right != null)
+                {
+                    queue.Enqueue(temp.right);
+                }
+            }
+            return list;
+        }
         #endregion
     }
 }

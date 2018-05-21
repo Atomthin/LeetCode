@@ -1,5 +1,6 @@
 using LeetCode.Core.Common;
 using LeetCode.Core.Problems;
+using System.Collections.Generic;
 using Xunit;
 
 namespace LeetCode.Test
@@ -40,7 +41,6 @@ namespace LeetCode.Test
         [Fact]
         public void MaxDepth()
         {
-
             var treeNode = new TreeNode(3)
             {
                 left = new TreeNode(9),
@@ -99,6 +99,58 @@ namespace LeetCode.Test
         public void MergeSort()
         {
             Assert.Equal(new int[] { 1, 3, 10, 30, 100, 200, 500, 1000, 2000 }, al.MergeSort(new int[] { 1, 3, 1000, 2000, 30, 10, 500, 200, 100 }));
+        }
+
+        [Fact]
+        public void DLR()
+        {
+            var treeNode = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+            };
+            treeNode.right.left = new TreeNode(7);
+            treeNode.right.right = new TreeNode(15);
+            Assert.Equal(new List<int> { 3, 9, 20, 7, 15 }, al.DLR(treeNode));
+        }
+
+        [Fact]
+        public void LDR()
+        {
+            var treeNode = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+            };
+            treeNode.right.left = new TreeNode(7);
+            treeNode.right.right = new TreeNode(15);
+            Assert.Equal(new List<int> { 9, 3, 7, 20, 15 }, al.LDR(treeNode));
+        }
+
+        [Fact]
+        public void LRD()
+        {
+            var treeNode = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+            };
+            treeNode.right.left = new TreeNode(7);
+            treeNode.right.right = new TreeNode(15);
+            Assert.Equal(new List<int> { 9, 7, 15, 20, 3 }, al.LRD(treeNode));
+        }
+
+        [Fact]
+        public void LevelOrder()
+        {
+            var treeNode = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+            };
+            treeNode.right.left = new TreeNode(7);
+            treeNode.right.right = new TreeNode(15);
+            Assert.Equal(new List<int> { 3, 9, 20, 7, 15 }, al.LevelOrder(treeNode));
         }
         #endregion
     }
