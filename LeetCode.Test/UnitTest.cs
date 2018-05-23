@@ -152,6 +152,54 @@ namespace LeetCode.Test
             treeNode.right.right = new TreeNode(15);
             Assert.Equal(new List<int> { 3, 9, 20, 7, 15 }, al.LevelOrder(treeNode));
         }
+
+        [Fact]
+        public void CtorBinarySearchTreeAndLDR()
+        {
+            var arr = new int[] { 3, 9, 20, 7, 15 };
+            var bst = new BinarySearchTree();
+            foreach (var item in arr)
+            {
+                bst.Insert(item);
+            }
+            Assert.Equal(new List<int> { 3, 7, 9, 15, 20 }, al.LDR(bst.root));
+        }
+
+        [Fact]
+        public void CtorBinarySearchTreeAndGetMax()
+        {
+            var arr = new int[] { 3, 9, 20, 7, 15 };
+            var bst = new BinarySearchTree();
+            foreach (var item in arr)
+            {
+                bst.Insert(item);
+            }
+            Assert.Equal(20, bst.GetMax());
+        }
+
+        [Fact]
+        public void CtorBinarySearchTreeAndGetMin()
+        {
+            var arr = new int[] { 3, 9, 20, 7, 15 };
+            var bst = new BinarySearchTree();
+            foreach (var item in arr)
+            {
+                bst.Insert(item);
+            }
+            Assert.Equal(3, bst.GetMin());
+        }
+
+        [Fact]
+        public void CtorBinarySearchTreeAndFind()
+        {
+            var arr = new int[] { 3, 9, 20, 7, 15 };
+            var bst = new BinarySearchTree();
+            foreach (var item in arr)
+            {
+                bst.Insert(item);
+            }
+            Assert.True(bst.Find(9));
+        }
         #endregion
     }
 }
