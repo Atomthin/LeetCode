@@ -279,49 +279,50 @@ namespace LeetCode.Core.Problems
         /// <returns></returns>
         public int[] MergeSort(int[] arr)
         {
-            int[] temp = new int[arr.Length];//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间
-            Sort(arr, 0, arr.Length - 1, temp);
+            Sort(arr, 0, arr.Length - 1);
             return arr;
         }
-        private static void Sort(int[] arr, int left, int right, int[] temp)
+        private static void Sort(int[] arr, int left, int right)
         {
             if (left < right)
             {
                 int mid = (left + right) / 2;
-                Sort(arr, left, mid, temp);//左边归并排序，使得左子序列有序
-                Sort(arr, mid + 1, right, temp);//右边归并排序，使得右子序列有序
-                Merge(arr, left, mid, right, temp);//将两个有序子数组合并操作
+                Sort(arr, left, mid);//左边归并排序，使得左子序列有序
+                Sort(arr, mid + 1, right);//右边归并排序，使得右子序列有序
+                Merge(arr, left, mid, right);//将两个有序子数组合并操作
             }
         }
-        private static void Merge(int[] arr, int left, int mid, int right, int[] temp)
+        private static void Merge(int[] arr, int left, int mid, int right)
         {
-            int i = left;//左序列指针
-            int j = mid + 1;//右序列指针
-            int t = 0;//临时数组指针
-            while (i <= mid && j <= right)
+            int[] L = new int[mid - left + 2];
+            int[] R = new int[right - mid + 1];
+            L[mid - left + 1] = int.MaxValue;
+            R[right - mid] = int.MaxValue;
+
+            for (int i = 0; i < mid - left + 1; i++)
             {
-                if (arr[i] <= arr[j])
+                L[i] = arr[left + i];
+            }
+
+            for (int i = 0; i < right - mid; i++)
+            {
+                R[i] = arr[mid + 1 + i];
+            }
+
+            int j = 0;
+            int k = 0;
+            for (int i = 0; i < right - left + 1; i++)
+            {
+                if (L[j] <= R[k])
                 {
-                    temp[t++] = arr[i++];
+                    arr[left + i] = L[j];
+                    j++;
                 }
                 else
                 {
-                    temp[t++] = arr[j++];
+                    arr[left + i] = R[k];
+                    k++;
                 }
-            }
-            while (i <= mid)
-            {//将左边剩余元素填充进temp中
-                temp[t++] = arr[i++];
-            }
-            while (j <= right)
-            {//将右序列剩余元素填充进temp中
-                temp[t++] = arr[j++];
-            }
-            t = 0;
-            //将temp中的元素全部拷贝到原数组中
-            while (left <= right)
-            {
-                arr[left++] = temp[t++];
             }
         }
 
