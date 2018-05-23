@@ -39,6 +39,12 @@ namespace LeetCode.Test
         }
 
         [Fact]
+        public void ReverseString()
+        {
+            Assert.Equal("ABC", al.ReverseString("CBA"));
+        }
+
+        [Fact]
         public void MaxDepth()
         {
             var treeNode = new TreeNode(3)

@@ -1,19 +1,15 @@
-﻿using System.Linq;
-using System.Text;
-
-namespace LeetCode.Core.Problems
+﻿namespace LeetCode.Core.Problems
 {
     public partial class Algorithms
     {
         public string ReverseString(string s)
         {
-            var reverse = s.Reverse();
-            StringBuilder sb = new StringBuilder();
-            foreach (var item in reverse)
+            var temp = new char[s.Length];
+            for (int i = 0; i < s.Length; i++)
             {
-                sb.Append(item);
+                temp[i] = s[s.Length - 1 - i];
             }
-            return sb.ToString();
+            return new string(temp);
         }
     }
 }
