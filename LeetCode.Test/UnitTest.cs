@@ -206,6 +206,20 @@ namespace LeetCode.Test
             }
             Assert.True(bst.Find(9));
         }
+
+        [Fact]
+        public void IsOneBitCharacter()
+        {
+            Assert.True(al.IsOneBitCharacter(new int[] { 0 }));
+            Assert.False(al.IsOneBitCharacter(new int[] { 1, 1, 1, 0 }));
+        }
+
+        [Fact]
+        public void LargeGroupPositions()
+        {
+            Assert.Equal(new List<IList<int>> { new List<int> { 3, 6 } }, al.LargeGroupPositions("abbxxxxzzy"));
+            Assert.Equal(new List<IList<int>> { new List<int> { 0, 2 } }, al.LargeGroupPositions("aaa"));
+        }
         #endregion
     }
 }
