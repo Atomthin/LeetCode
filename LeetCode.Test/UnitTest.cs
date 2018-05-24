@@ -57,6 +57,12 @@ namespace LeetCode.Test
             Assert.Equal(3, al.MaxDepth(treeNode));
         }
 
+        [Fact]
+        public void RotatedDigits()
+        {
+            Assert.Equal(247, al.RotatedDigits(857));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
