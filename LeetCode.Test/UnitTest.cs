@@ -206,6 +206,13 @@ namespace LeetCode.Test
             }
             Assert.True(bst.Find(9));
         }
+
+        [Fact]
+        public void IsOneBitCharacter()
+        {
+            Assert.True(al.IsOneBitCharacter(new int[] { 0 }));
+            Assert.False(al.IsOneBitCharacter(new int[] { 1, 1, 1, 0 }));
+        }
         #endregion
     }
 }
