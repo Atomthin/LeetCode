@@ -226,6 +226,18 @@ namespace LeetCode.Test
             Assert.Equal(new List<IList<int>> { new List<int> { 3, 6 } }, al.LargeGroupPositions("abbxxxxzzy"));
             Assert.Equal(new List<IList<int>> { new List<int> { 0, 2 } }, al.LargeGroupPositions("aaa"));
         }
+
+        [Fact]
+        public void MostCommonWord()
+        {
+            Assert.Equal("ball", al.MostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new string[] { "hit" }));
+        }
+
+        [Fact]
+        public void RomanToInt()
+        {
+            Assert.Equal(58, al.RomanToInt("LVIII"));
+        }
         #endregion
     }
 }
