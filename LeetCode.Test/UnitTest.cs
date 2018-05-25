@@ -63,6 +63,12 @@ namespace LeetCode.Test
             Assert.Equal(247, al.RotatedDigits(857));
         }
 
+        [Fact]
+        public void StrStr()
+        {
+            Assert.Equal(-1, al.StrStr("mississippi", "sippia"));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
