@@ -226,6 +226,12 @@ namespace LeetCode.Test
         {
             Assert.Equal("ball", al.MostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", new string[] { "hit" }));
         }
+
+        [Fact]
+        public void RomanToInt()
+        {
+            Assert.Equal(58, al.RomanToInt("LVIII"));
+        }
         #endregion
     }
 }
