@@ -69,6 +69,18 @@ namespace LeetCode.Test
             Assert.Equal(-1, al.StrStr("mississippi", "sippia"));
         }
 
+        [Fact]
+        public void FirstUniqChar()
+        {
+            Assert.Equal(2, al.FirstUniqChar("loveleetcode"));
+        }
+
+        [Fact]
+        public void CheckRecord()
+        {
+            Assert.True(al.CheckRecord("PPALLP"));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
