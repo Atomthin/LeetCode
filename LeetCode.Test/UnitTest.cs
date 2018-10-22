@@ -81,6 +81,12 @@ namespace LeetCode.Test
             Assert.True(al.CheckRecord("PPALLP"));
         }
 
+        [Fact]
+        public void PeakIndexInMountainArray()
+        {
+            Assert.Equal(1, al.PeakIndexInMountainArray(new int[] { 0, 2, 1, 0 }));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
