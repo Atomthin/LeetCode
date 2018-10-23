@@ -87,6 +87,12 @@ namespace LeetCode.Test
             Assert.Equal(1, al.PeakIndexInMountainArray(new int[] { 0, 2, 1, 0 }));
         }
 
+        [Fact]
+        public void ToLowerCase()
+        {
+            Assert.Equal("hello", al.ToLowerCase("HelLo"));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
