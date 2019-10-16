@@ -1,3 +1,4 @@
+using System;
 using LeetCode.Core.Common;
 using LeetCode.Core.Problems;
 using System.Collections.Generic;
@@ -91,6 +92,12 @@ namespace LeetCode.Test
         public void ToLowerCase()
         {
             Assert.Equal("hello", al.ToLowerCase("HelLo"));
+        }
+
+        [Fact]
+        public void SortArrayByParityII()
+        {
+            Assert.Equal(new int[] { 2, 3, 4, 5, 6, 7 }, al.SortArrayByParityII(new int[] { 3, 2, 4, 5, 6, 7 }));
         }
 
         #region CommonAlgorithms
