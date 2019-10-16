@@ -10,7 +10,7 @@ namespace LeetCode.Core.Problems
         {
             var oddList = new List<int>(array.Length / 2);
             var evenList = new List<int>(array.Length / 2);
-            var  tempList = new List<int>(array.Length);
+            var tempList = new List<int>(array.Length);
             foreach (var t in array)
             {
                 if (t % 2 == 0)
@@ -22,7 +22,7 @@ namespace LeetCode.Core.Problems
                     evenList.Add(t);
                 }
             }
-            for (int i = 0; i < array.Length/2; i++)
+            for (int i = 0; i < array.Length / 2; i++)
             {
                 tempList.Add(oddList[i]);
                 tempList.Add(evenList[i]);

@@ -100,6 +100,14 @@ namespace LeetCode.Test
             Assert.Equal(new int[] { 2, 3, 4, 5, 6, 7 }, al.SortArrayByParityII(new int[] { 3, 2, 4, 5, 6, 7 }));
         }
 
+        [Fact]
+        public void IsPalindrome()
+        {
+            Assert.Equal(true, al.IsPalindrome(1221));
+            Assert.Equal(false, al.IsPalindrome(-1221));
+            Assert.Equal(true, al.IsPalindrome(1234321));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
