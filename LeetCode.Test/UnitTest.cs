@@ -108,6 +108,15 @@ namespace LeetCode.Test
             Assert.Equal(true, al.IsPalindrome(1234321));
         }
 
+        [Fact]
+        public void MaxProfit()
+        {
+            Assert.Equal(5, al.MaxProfit(new[] { 7, 1, 5, 3, 6, 4 }));
+            Assert.Equal(3, al.MaxProfit(new[] { 2, 1, 4 }));
+            Assert.Equal(0, al.MaxProfit(new[] { 7, 6, 4, 3, 1 }));
+            Assert.Equal(4, al.MaxProfit(new[] { 3, 2, 6, 5, 0, 3 }));
+        }
+
         #region CommonAlgorithms
         [Fact]
         public void BinarySearch()
