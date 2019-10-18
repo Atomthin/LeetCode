@@ -2,17 +2,18 @@ using System;
 using LeetCode.Core.Common;
 using LeetCode.Core.Problems;
 using System.Collections.Generic;
+using LeetCode.Core.DataStructure.LinkedList;
 using Xunit;
 
 namespace LeetCode.Test
 {
     public class UnitTest
     {
+        #region UT
         Algorithms al = new Algorithms();
         [Fact]
         public void TwoSum()
         {
-
             Assert.Equal(new int[] { 0, 1 }, al.TwoSum(new int[] { 2, 7, 11, 15 }, 9));
             Assert.NotEqual(new int[] { 1, 3 }, al.TwoSum(new int[] { 2, 7, 11, 15 }, 18));
         }
@@ -115,7 +116,8 @@ namespace LeetCode.Test
             Assert.Equal(3, al.MaxProfit(new[] { 2, 1, 4 }));
             Assert.Equal(0, al.MaxProfit(new[] { 7, 6, 4, 3, 1 }));
             Assert.Equal(4, al.MaxProfit(new[] { 3, 2, 6, 5, 0, 3 }));
-        }
+        } 
+        #endregion
 
         #region CommonAlgorithms
         [Fact]
@@ -292,6 +294,20 @@ namespace LeetCode.Test
         {
             Assert.Equal(58, al.RomanToInt("LVIII"));
         }
+        #endregion
+
+        #region DataStruceure
+        MyLinkedList linkedList = new MyLinkedList();
+        [Fact]
+        public void MyLinkedList()
+        {
+            linkedList.AddAtIndex(0,10);
+            linkedList.AddAtIndex(0,20);
+            linkedList.AddAtIndex(1,30);
+            Assert.Equal(20,linkedList.Get(0));
+        }
+
+
         #endregion
     }
 }
