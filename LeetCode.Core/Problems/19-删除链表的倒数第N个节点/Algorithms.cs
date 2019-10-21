@@ -25,16 +25,15 @@ namespace LeetCode.Core.Problems
                 return head.next;
             }
             var removeIndex = count - n;
-            var tempIndex = 0;
             ListNode prev = head;
-            ListNode delNode = head;
-            while (tempIndex != removeIndex)
+            node = head;
+            while (removeIndex > 0)
             {
-                prev = delNode;
-                delNode = delNode.next;
-                tempIndex++;
+                prev = node;
+                node = node.next;
+                removeIndex--;
             }
-            prev.next = delNode.next;
+            prev.next = node.next;
             return head;
         }
     }
