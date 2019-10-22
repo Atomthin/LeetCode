@@ -5,8 +5,8 @@ namespace LeetCode.Core.Problems
     public partial class Algorithms
     {
         /// <summary>
-        /// 笨办法，循环两遍，第一边把链表中的个数算出来，然后后面计算得到需要移除的元素的索引，在循环一遍，移除该元素
-        /// 理论上应该可以用双指针的方法，再研究一下
+        /// 笨办法，先进行一遍循环，算出链表的长度，然后通过计算得知需要删除的节点的索引，再通过一遍循环删除节点
+        /// 应该能通过双指针的办法进行，需要进一步的思考
         /// </summary>
         /// <param name="head"></param>
         /// <param name="n"></param>
@@ -25,16 +25,15 @@ namespace LeetCode.Core.Problems
                 return head.next;
             }
             var removeIndex = count - n;
-            var tempIndex = 0;
             ListNode prev = head;
-            ListNode delNode = head;
-            while (tempIndex != removeIndex)
+            node = head;
+            while (removeIndex > 0)
             {
-                prev = delNode;
-                delNode = delNode.next;
-                tempIndex++;
+                prev = node;
+                node = node.next;
+                removeIndex--;
             }
-            prev.next = delNode.next;
+            prev.next = node.next;
             return head;
         }
     }
