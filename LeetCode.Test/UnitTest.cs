@@ -116,7 +116,13 @@ namespace LeetCode.Test
             Assert.Equal(3, al.MaxProfit(new[] { 2, 1, 4 }));
             Assert.Equal(0, al.MaxProfit(new[] { 7, 6, 4, 3, 1 }));
             Assert.Equal(4, al.MaxProfit(new[] { 3, 2, 6, 5, 0, 3 }));
-        } 
+        }
+
+        [Fact]
+        public void IsPalindromeListNode()
+        {
+            Assert.Equal(true, al.IsPalindrome(new ListNode(0) { next = new ListNode(0) }));
+        }
         #endregion
 
         #region CommonAlgorithms
@@ -301,10 +307,10 @@ namespace LeetCode.Test
         [Fact]
         public void MyLinkedList()
         {
-            linkedList.AddAtIndex(0,10);
-            linkedList.AddAtIndex(0,20);
-            linkedList.AddAtIndex(1,30);
-            Assert.Equal(20,linkedList.Get(0));
+            linkedList.AddAtIndex(0, 10);
+            linkedList.AddAtIndex(0, 20);
+            linkedList.AddAtIndex(1, 30);
+            Assert.Equal(20, linkedList.Get(0));
         }
 
 
