@@ -300,6 +300,13 @@ namespace LeetCode.Test
         {
             Assert.Equal(58, al.RomanToInt("LVIII"));
         }
+
+        [Fact]
+        public void PivotIndex()
+        {
+            Assert.Equal(3, al.PivotIndex(new[] { 1, 7, 3, 6, 5, 6 }));
+            Assert.Equal(2, al.PivotIndex(new[] { -1, -1, -1, -1, -1, 0 }));
+        }
         #endregion
 
         #region DataStruceure
