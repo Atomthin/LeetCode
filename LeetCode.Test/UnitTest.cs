@@ -123,6 +123,13 @@ namespace LeetCode.Test
         {
             Assert.Equal(true, al.IsPalindrome(new ListNode(0) { next = new ListNode(0) }));
         }
+
+        [Fact]
+        public void FindDiagonalOrder()
+        {
+            int[][] matrix = { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } };
+            Assert.Equal(new int[] { 1, 2, 4, 7, 5, 3, 6, 8, 9 }, al.FindDiagonalOrder(matrix));
+        }
         #endregion
 
         #region CommonAlgorithms
