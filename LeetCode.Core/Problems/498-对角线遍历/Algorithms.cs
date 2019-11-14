@@ -5,7 +5,7 @@ namespace LeetCode.Core.Problems
 {
     public partial class Algorithms
     {
-        public int[] FindDiagonalOrder(int[][] matrix)
+        public int[] FindDiagonalOrder(int[,] matrix)
         {
             if (matrix == null || matrix.Length == 0 || matrix.GetLength(0) == 0)
             {
@@ -13,7 +13,7 @@ namespace LeetCode.Core.Problems
             }
             var index = 0;
             var row = matrix.GetLength(0);
-            var col = matrix.GetUpperBound(0) + 1;
+            var col = matrix.GetLength(1);
             var resultArr = new int[row * col];
             for (int i = 0; i < row + col - 1; i++)
             {
@@ -26,7 +26,7 @@ namespace LeetCode.Core.Problems
                     //开始遍历 x坐标不断减 y坐标不断加 当x减到0 或者 y加到列n的值
                     while (x >= 0 && y < col)
                     {
-                        resultArr[index] = matrix[x][y];
+                        resultArr[index] = matrix[x, y];
                         x--;
                         y++;
                         index++;
@@ -40,7 +40,7 @@ namespace LeetCode.Core.Problems
                     //y坐标不断减 x坐标不断加 当y减到0 或者 x加到行m的值
                     while (y >= 0 && x < row)
                     {
-                        resultArr[index] = matrix[x][y];
+                        resultArr[index] = matrix[x, y];
                         y--;
                         x++;
                         index++;
