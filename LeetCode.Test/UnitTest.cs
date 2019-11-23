@@ -130,6 +130,14 @@ namespace LeetCode.Test
             int[,] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
             Assert.Equal(new int[] { 1, 2, 4, 7, 5, 3, 6, 8, 9 }, al.FindDiagonalOrder(matrix));
         }
+
+        [Fact]
+        public void MiddleNode()
+        {
+            var ddd = new ListNode(3) { next = new ListNode(4) { next = new ListNode(5) } };
+            Assert.Equal(ddd, al.MiddleNode(new ListNode(1) { next = new ListNode(2) { next = new ListNode(3) { next = new ListNode(4) { next = new ListNode(5) } } } }));
+        }
+
         #endregion
 
         #region CommonAlgorithms
