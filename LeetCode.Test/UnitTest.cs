@@ -328,6 +328,12 @@ namespace LeetCode.Test
             Assert.Equal(3, al.PivotIndex(new[] { 1, 7, 3, 6, 5, 6 }));
             Assert.Equal(2, al.PivotIndex(new[] { -1, -1, -1, -1, -1, 0 }));
         }
+
+        [Fact]
+        public void RemoveDuplicates()
+        {
+            Assert.Equal("ca", al.RemoveDuplicates("abbaca"));
+        }
         #endregion
 
         #region DataStruceure
