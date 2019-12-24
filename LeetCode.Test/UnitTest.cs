@@ -334,6 +334,12 @@ namespace LeetCode.Test
         {
             Assert.Equal("ca", al.RemoveDuplicates("abbaca"));
         }
+
+        [Fact]
+        public void BackspaceCompare()
+        {
+            Assert.True(al.BackspaceCompare("a##c","#a#c"));
+        }
         #endregion
 
         #region DataStruceure
